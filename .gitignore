@@ -1,0 +1,46 @@
+# ==========================================
+# Delphi / RAD Studio Build & Output Files
+# ==========================================
+# Pastas de saída da compilação (Binários e Objetos)
+/Win32/
+/Win64/
+/iOSDevice64/
+/Android/
+/Android64/
+/OSX64/
+/OSXARM64/
+
+# Executáveis e Bibliotecas gerados
+*.exe
+*.dll
+*.bpl
+*.dcp
+*.apk
+*.aab
+*.ipa
+
+# Arquivos de Compilação Intermediários (DCUs, Objetos, etc.)
+*.dcu
+*.~*
+*.o
+*.obj
+*.lib
+*.a
+
+# ==========================================
+# RAD Studio IDE / User Specific Files
+# ==========================================
+# Configurações pessoais e histórico local da IDE
+*.local
+*.identcache
+*.stat
+*.tvsconfig
+*.dsk
+
+# Log e Histórico
+__history/
+__recovery/
+
+# Outros temporários
+*.log
+*.tmp

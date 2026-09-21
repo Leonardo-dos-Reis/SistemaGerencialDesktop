@@ -1,0 +1,96 @@
+object frmMenuPrincipal: TfrmMenuPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Sistema Gerencial Etanol'
+  ClientHeight = 600
+  ClientWidth = 800
+  Position = DesktopCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object rctFundoMenuPrincipal: TRectangle
+    Align = Client
+    Fill.Color = xFFF2F2F2
+    Size.Width = 800.000000000000000000
+    Size.Height = 600.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object lytContainerMenuPrincipal: TLayout
+      Align = Client
+      Size.Width = 800.000000000000000000
+      Size.Height = 600.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object grdSeparadorMenuFrame: TGridPanelLayout
+        Align = Client
+        Size.Width = 800.000000000000000000
+        Size.Height = 600.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        ColumnCollection = <
+          item
+            Value = 25.000000000000000000
+          end
+          item
+            Value = 75.000000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 0
+            ColumnSpan = 2
+            Control = Layout1
+            Row = 0
+          end
+          item
+            Column = 0
+            Control = Layout2
+            Row = 1
+          end
+          item
+            Column = 1
+            Control = Layout3
+            Row = 1
+          end>
+        RowCollection = <
+          item
+            SizeStyle = Absolute
+            Value = 60.000000000000000000
+          end
+          item
+            Value = 100.000000000000000000
+          end>
+        object Layout1: TLayout
+          Align = Client
+          Size.Width = 800.000000000000000000
+          Size.Height = 60.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object lytContainerBotao: TLayout
+            Position.X = 240.000000000000000000
+            Position.Y = 8.000000000000000000
+            Size.Width = 169.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+          end
+        end
+        object Layout2: TLayout
+          Align = Client
+          Size.Width = 200.000000000000000000
+          Size.Height = 540.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+        end
+        object Layout3: TLayout
+          Align = Client
+          Size.Width = 600.000000000000000000
+          Size.Height = 540.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+        end
+      end
+    end
+  end
+end
