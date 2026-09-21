@@ -16,6 +16,11 @@ type
   private
     FRoundRect: TRoundRect;
     FCorOriginalBotao: TAlphaColor;
+    FCorHoverBotao: TAlphaColor;
+    FAutoHoverColor: Boolean;
+
+    procedure SetCorOriginalBotao(const Valor: TAlphaColor);
+    procedure SetCorHoverBotao(const Valor: TAlphaColor);
 
     //==================================================================================
     //
@@ -31,6 +36,11 @@ type
 
   public
     constructor Create(AOwner: TComponent); override;
+
+  published
+    property NormalColor: TAlphaColor read FCorOriginalBotao write SetCorOriginalBotao;
+    property HoverColor: TAlphaColor read FCorHoverBotao write SetCorHoverBotao;
+
   end;
 
 implementation
@@ -48,8 +58,13 @@ constructor THoverButton.Create(AOwner: TComponent);
     FRoundRect.Parent := Self;
     FRoundRect.Align := TAlignLayout.Client;
 
-    FRoundRect.Fill.Color := TAlphaColorRec.Steelblue;
-    FCorOriginalBotao := FRoundRect.Fill.Color;
+    FCorOriginalBotao := TAlphaColorRec.Steelblue;
+
+    FAutoHoverColor:= True;
+
+    FCorHoverBotao := ClarearCor(FCorOriginalBotao, 30);
+
+    FRoundRect.Fill.Color := FCorOriginalBotao;
     FRoundRect.Stroke.Kind := TBrushKind.None;
 
     OnMouseEnter := MouseEnter;
@@ -59,7 +74,7 @@ constructor THoverButton.Create(AOwner: TComponent);
 
 procedure THoverButton.MouseEnter(Sender: TObject);
   begin
-    FRoundRect.Fill.Color := ClarearCor(FCorOriginalBotao,30);
+    FRoundRect.Fill.Color := FCorHoverBotao;
   end;
 
 procedure THoverButton.MouseLeave(Sender: TObject);
@@ -80,5 +95,27 @@ function THoverButton.ClarearCor(PCorOriginal: TAlphaColor; PPercentual: Single)
 
     Result := TAlphaColor(LCorRec);
 	end;
+
+procedure THoverButton.SetCorHoverBotao(const Valor: TAlphaColor);
+  begin
+    if FCorHoverBotao = Valor then
+      Exit;
+
+    FCorHoverBotao := Valor;
+
+    FRoundRect.Fill.Color := FCorOriginalBotao;
+
+    if FAutoHoverColor then
+      FCorHoverBotao := ClarearCor(FCorOriginalBotao, 30);
+  end;
+
+procedure THoverButton.SetCorOriginalBotao(const Valor: TAlphaColor);
+  begin
+    if FCorOriginalBotao = Valor then
+      Exit;
+
+    FCorOriginalBotao := Valor;
+    FRoundRect.Fill.Color := FCorOriginalBotao;
+  end;
 
 end.

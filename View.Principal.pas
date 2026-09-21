@@ -5,7 +5,8 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
-  FMX.Layouts, FMX.Effects, Components.CustomHoverButton;
+  FMX.Layouts, FMX.Effects, Components.CustomHoverButton,
+  FMX.Controls.Presentation, FMX.StdCtrls;
 
 type
   TfrmMenuPrincipal = class(TForm)
@@ -17,7 +18,11 @@ type
     Layout3: TLayout;
     BtnFermentacao: THoverButton;
     lytContainerBotao: TLayout;
+    Button1: TButton;
+    Button2: TButton;
     procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
 
@@ -36,6 +41,16 @@ implementation
 {$R *.fmx}
 
 { TfrmMenuPrincipal }
+
+procedure TfrmMenuPrincipal.Button1Click(Sender: TObject);
+begin
+  BtnFermentacao.NormalColor := TAlphaColorRec.Crimson;
+end;
+
+procedure TfrmMenuPrincipal.Button2Click(Sender: TObject);
+begin
+  BtnFermentacao.HoverColor := TAlphaColorRec.Green;
+end;
 
 procedure TfrmMenuPrincipal.CriarBotaoCustom;
 begin

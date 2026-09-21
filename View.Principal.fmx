@@ -75,6 +75,20 @@ object frmMenuPrincipal: TfrmMenuPrincipal
             Size.PlatformDefault = False
             TabOrder = 0
           end
+          object Button1: TButton
+            Position.X = 520.000000000000000000
+            Position.Y = 24.000000000000000000
+            TabOrder = 1
+            Text = 'Button1'
+            OnClick = Button1Click
+          end
+          object Button2: TButton
+            Position.X = 648.000000000000000000
+            Position.Y = 24.000000000000000000
+            TabOrder = 2
+            Text = 'Button2'
+            OnClick = Button2Click
+          end
         end
         object Layout2: TLayout
           Align = Client
